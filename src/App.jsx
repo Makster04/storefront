@@ -1,22 +1,19 @@
-// App.jsx
-import React from 'react';
-import Header from './Components/Header/index.jsx';
-import Footer from './Components/Footer/index.jsx';
-import Categories from './Components/Categories/index.jsx';
-import Products from './Components/Products/index.jsx';
-import './App.scss';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Categories from './Components/Categories';
+import Products from './Components/Products';
+import store from './store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div className="app">
+    <Provider store={store}>
       <Header />
-      <main className="main-content">
-        <Categories />
-        <Products />
-      </main>
+      <Categories />
+      <Products />
       <Footer />
-    </div>
-  );
+    </Provider>
+  )
 }
 
-export default App;
+export default App
