@@ -1,14 +1,8 @@
-// Components/Footer.jsx
-import React from 'react';
-
-function Footer() {
+export default function Footer() {
   return (
-    <footer className="footer">
+    <footer>
       <p>Copyright © 2024 Virtual Store. All rights reserved.</p>
     </footer>
   );
 }
-
-export default Footer;
-
 
