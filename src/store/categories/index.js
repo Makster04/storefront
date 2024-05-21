@@ -1,25 +1,35 @@
 // store/categories.js
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  categories: [],
-  activeCategory: null,
-};
-
-const categoriesSlice = createSlice({
-  name: 'categories',
-  initialState,
-  reducers: {
-    setCategories(state, action) {
-      state.categories = action.payload;
-    },
-    setActiveCategory(state, action) {
-      state.activeCategory = action.payload;
-    },
-  },
+const createCategory = (name, display, desc) => ({
+  name,
+  display,
+  description: desc,
 });
 
-export const { setCategories, setActiveCategory } = categoriesSlice.actions;
+const initialState = {
+  categories: [
+    createCategory("Indica", "Indica", "In da couch"),
+    createCategory("Sativa", "Sativa", "Not in da couch"),
+    createCategory("Hybrid", "Hybrid", "Maybe in da couch"),
+  ],
+  activeCategory: "",
+};
 
-export default categoriesSlice.reducer;
+export const categoryReducer = (state = initialState, action) => {
 
+  switch (action.type) {
+    case "UPDATE":
+      return {
+        categories: state.categories,
+        activeCategory: action.payload,
+      };
+    default:
+      return state;
+  }
+}
+
+export const updateCategory = (category) => {
+  return {
+    type: "UPDATE",
+    payload: category
+  }
+}
