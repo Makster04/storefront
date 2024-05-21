@@ -1,9 +1,10 @@
+// Components/Categories.jsx
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { List, ListItem, ListItemText } from '@mui/material';
+import { setActiveCategory } from '../store/categories';
 
-const Categories = () => {
-  const categories = useSelector(state => state.categories);
+function Categories() {
+  const categories = useSelector((state) => state.categories.categories); // Access categories array
   const dispatch = useDispatch();
 
   const handleCategoryClick = (category) => {
@@ -11,22 +12,19 @@ const Categories = () => {
   };
 
   return (
-    <div>
-      <h3>Categories</h3>
-      <List>
-        {categories.map(category => (
-          <ListItem 
-            key={category.id} 
-            button 
-            onClick={() => handleCategoryClick(category)}
-            selected={category === categories.activeCategory}
-          >
-            <ListItemText primary={category.name} />
-          </ListItem>
+    <div className="categories">
+      <h2>Categories</h2>
+      <ul>
+        {categories.map((category) => (
+          <li key={category.id} onClick={() => handleCategoryClick(category)}>
+            {category.name}
+          </li>
         ))}
-      </List>
+      </ul>
     </div>
   );
-};
+}
 
 export default Categories;
+
+

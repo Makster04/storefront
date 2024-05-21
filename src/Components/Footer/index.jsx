@@ -1,13 +1,13 @@
+// Components/Footer.jsx
 import React from 'react';
-import { Typography } from '@mui/material';
 
-const Footer = () => {
+function Footer() {
   return (
-    <Typography variant="subtitle2" align="center">
-      Copyright © {new Date().getFullYear()} Virtual Store. All Rights Reserved.
-    </Typography>
+    <footer className="footer">
+      <p>Copyright © 2024 Virtual Store. All rights reserved.</p>
+    </footer>
   );
-};
+}
 
 export default Footer;
 
