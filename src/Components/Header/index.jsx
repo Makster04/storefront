@@ -1,12 +1,8 @@
-// Components/Header.jsx
-import React from 'react';
+export default function Header() {
 
-function Header() {
   return (
-    <header className="header">
-      <h1>Virtual Store</h1>
+    <header>
+      <h1>50 States, Lets Get 50 Vacations!!!</h1>
     </header>
-  );
+  )
 }
-
-export default Header;
