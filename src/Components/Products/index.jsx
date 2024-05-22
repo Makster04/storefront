@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { green } from '@mui/material/colors';
+import { blue, green, orange } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 
 
@@ -38,15 +38,15 @@ export default function Products() {
 
   return (
     <>
-      <h2>Our Products</h2>
+      <h2>Shoes Avaliable</h2>
       <Box
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
           '& > :not(style)': {
             m: 1,
-            width: 420,
-            height: 420,
+            width: 500,
+            height: 500,
           },
         }}
       >
@@ -54,7 +54,7 @@ export default function Products() {
           return <Card key={idx} sx={{ maxWidth: 345 }}>
             <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: green[500] }} aria-label="weed">
+                <Avatar sx={{ bgcolor: orange[500] }} aria-label="cheese">
                   W
                 </Avatar>
               }

@@ -6,9 +6,8 @@ const createCategory = (name, display, desc) => ({
 
 const initialState = {
   categories: [
-    createCategory("Indica", "Indica", "In da couch"),
-    createCategory("Sativa", "Sativa", "Not in da couch"),
-    createCategory("Hybrid", "Hybrid", "Maybe in da couch"),
+    createCategory("Adidas", "Adidas", "Lets be Kareem Abdul-Jabbar"),
+    createCategory("Nike", "Nike", "Lets be Michael Jordan"),
   ],
   activeCategory: "",
 };

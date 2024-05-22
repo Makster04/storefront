@@ -30,7 +30,7 @@ export default function Categories() {
   return (
     <section>
       <h2>Browse our Categories</h2>
-      {activeCategory ? <h3> Selected Category: {activeCategory}</h3> : <h3>Please Select A Category</h3>}
+      {activeCategory ? <h3> Selected Category: {activeCategory}</h3> : <h3>Choose Your Type</h3>}
       <Button onClick={() => clearCategory()}>Reset</Button>
       <Box
         sx={{
@@ -54,7 +54,7 @@ export default function Categories() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button onClick={() => handleClick(category)}>Select</Button>
+              <Button onClick={() => handleClick(category)}>PRESS IT</Button>
             </CardActions>
           </Card>
         })}

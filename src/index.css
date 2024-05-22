@@ -1,12 +1,24 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --primary-color: #ff7f50; /* Slam dunk coral */
+  --primary-color-hover: #ff6347; /* Three-pointer tomato */
+  --background-color: #1e1e2f; /* Buzzer-beater darkness */
+  --background-color-light: #f0f0f5; /* Fast-break light */
+  --text-color: #e0e0e0; /* Alley-oop gray */
+  --text-color-light: #333333; /* Crossover dark */
+  --button-bg-color: #282845; /* Court-side dark */
+  --button-bg-color-hover: #3c3c6e; /* Defense darker */
+  --button-bg-color-light: #ffffff; /* Layup white */
+  --border-radius: 50%; /* Full-court roundness */
+  --transition-duration: 0.3s; /* Hang-time transition */
+  --animation-duration: 0.4s; /* Breakaway animation */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Backboard shadow */
+
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', 'Comic Neue', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--text-color);
+  background-color: var(--background-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,54 +27,109 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: var(--primary-color);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--transition-duration), transform var(--transition-duration);
 }
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  background: var(--primary-color);
+  transition: width var(--transition-duration);
+  bottom: -2px;
+  left: 0;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
 a:hover {
-  color: #535bf2;
+  color: var(--primary-color-hover);
+  transform: scale(1.1) rotate(3deg); /* Spin move */
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0.67em 0;
+  animation: fadeIn var(--animation-duration) ease-in-out, bounce var(--animation-duration) 0.6s ease-in-out infinite alternate; /* Double Dribble */
 }
 
 button {
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.8em 1.6em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg-color);
+  color: var(--text-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration), transform var(--transition-duration);
+  box-shadow: var(--box-shadow);
 }
+
 button:hover {
-  border-color: #646cff;
+  background-color: var(--button-bg-color-hover);
+  border-color: var(--primary-color);
+  transform: translateY(-2px) scale(1.05) rotate(-2deg); /* Slam dunk effect */
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
   }
+
   a:hover {
-    color: #747bff;
+    color: var(--primary-color-hover);
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: var(--button-bg-color-light);
+    color: var(--text-color-light);
   }
 }

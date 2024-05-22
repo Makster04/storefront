@@ -2,7 +2,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>50 States, Lets Get 50 Vacations!!!</h1>
+      <h1>Find Your Shoe</h1>
     </header>
   )
 }
