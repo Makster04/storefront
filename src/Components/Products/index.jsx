@@ -9,9 +9,10 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { grey, lightBlue } from '@mui/material/colors';
+import { grey, lightBlue, orange } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 
 const ExpandMore = styled((props) => {
@@ -59,12 +60,12 @@ export default function Products() {
           }}>
             <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: lightBlue[500] }} aria-label="drip">
-                  DRIP
+                <Avatar sx={{ bgcolor: orange[500] }} aria-label="basketball">
+                  BASKETBALL
                 </Avatar>
               }
-              title={product.name}
-              subheader={product.category}
+              title={`${product.name} - $${product.price}`}
+              subheader={`${product.category} - ${product.countInStock} in stock`}
             />
             <CardMedia
               component="img"
@@ -87,6 +88,7 @@ export default function Products() {
                }}
               onClick={() => dispatch(addToCart(product))}
             >ADD TO CART</Button>
+            <Link to={`/products/${product.id}`}>Product Details</Link>
           </Card>
 
         })}

@@ -1,3 +1,16 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const loadProductsAsync = createAsyncThunk(
+  'products/loadProductsAsync',
+  async () => {
+    const response = await axios.get('/api/products');
+    return response.data;
+  }
+);
+
+let productId = 0;
+
 export const createProduct = (
   category,
   name,
@@ -6,6 +19,7 @@ export const createProduct = (
   price,
   countInStock,
 ) => ({
+  id: productId++,
   category,
   name,
   description: desc,
@@ -13,6 +27,7 @@ export const createProduct = (
   price,
   countInStock,
 });
+
 
 const initialState = {
   products: [
@@ -48,6 +63,8 @@ const initialState = {
       135.0,
       30,
     ),
+  ],
+  filteredProducts: [
     createProduct(
       "Nike",
       "Karl Anthony Towns",
@@ -98,27 +115,29 @@ const initialState = {
       18,
     ),
   ],
-  filteredProducts: [
-  ],
 };
+
+const FILTER = 'FILTER';
+const ADD_TO_CART = 'ADD_TO_CART';
+const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "FILTER":
+    case FILTER:
       return {
-        products: state.products,
-        filteredProducts: state.products.filter((product) => {
-          if (product.category === action.payload) {
-            return product;
-          } else if (action.payload === "") {
-            return product;
-          }
-        }),
+        ...state,
+        filter: action.payload,
       };
-      //changes here check demo code for changes
-    case 'ADD_TO_CART':
-      console.log('DECREMENT PRODUCT COUNT', action.payload)
-      return state;
+
+    case ADD_TO_CART:
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        products: state.products.map(product => 
+          product.id === action.payload ? { ...product, countInStock: product.countInStock + (action.type === ADD_TO_CART ? -1 : 1) } : product
+        ),
+      };
+
     default:
       return state;
   }
@@ -130,3 +149,38 @@ export const productsFilter = (category) => {
     payload: category,
   };
 };
+
+export const getFilteredProducts = (state) => {
+  const filter = state.filter;
+  if (!filter) {
+    return state.products;
+  }
+  return state.products.filter(product => product.category === filter);
+};
+
+
+const productsSlice = createSlice({
+  name: 'products',
+  initialState: [],
+  reducers: {
+    addToCart: (state, action) => {
+      const product = state.find(product => product.id === action.payload);
+      if (product) {
+        product.countInStock--;
+      }
+    },
+    removeFromCart: (state, action) => {
+      const product = state.find(product => product.id === action.payload);
+      if (product) {
+        product.countInStock++;
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(loadProductsAsync.fulfilled, (state, action) => {
+      return action.payload;
+    });
+  },
+});
+
+export const { actions, reducer } = productsSlice;
