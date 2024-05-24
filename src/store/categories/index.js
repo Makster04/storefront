@@ -6,14 +6,13 @@ const createCategory = (name, display, desc) => ({
 
 const initialState = {
   categories: [
-    createCategory("Adidas", "Adidas", "Lets be the Dream"),
-    createCategory("Nike", "Nike", "Lets be Michael Jordan"),
+    createCategory("Adidas", "Adidas", "Better for Offense?"),
+    createCategory("Nike", "Nike", "Better for Defense?"),
   ],
   activeCategory: "",
 };
 
 export const categoryReducer = (state = initialState, action) => {
-
   switch (action.type) {
     case "UPDATE":
       return {
@@ -23,11 +22,4 @@ export const categoryReducer = (state = initialState, action) => {
     default:
       return state;
   }
-}
-
-export const updateCategory = (category) => {
-  return {
-    type: "UPDATE",
-    payload: category
-  }
-}
+};

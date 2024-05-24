@@ -1,7 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCategory } from '../../store/categories';
-import { productFilter } from '../../store/products.js';
-import { useEffect } from 'react';
+import { updateCategory } from '../../store/global-action/action.js';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -23,38 +21,30 @@ export default function Categories() {
     dispatch(updateCategory(''))
   };
 
-  useEffect(() => {
-    dispatch(productFilter(activeCategory))
-  }, [activeCategory, dispatch])
-
   return (
-    <section>
-      <h2>Browse our Categories</h2>
-      {activeCategory ? <h3> Selected Category: {activeCategory}</h3> : <h3>Choose Your Type</h3>}
+    <section style={{ textAlign: 'center' }}> {/* Center align the content */}
+      <h2 style={{ margin: '20px 0' }}>Browse our Categories</h2> {/* Added margin */}
+      {activeCategory ? <h3 style={{ margin: '10px 0' }}> Selected Category: {activeCategory}</h3> : <h3 style={{ margin: '10px 0' }}>Please Select A Category</h3>} {/* Added margin */}
       <Button onClick={() => clearCategory()}>Reset</Button>
       <Box
         sx={{
           display: 'flex',
           flexWrap: 'wrap',
-          '& > :not(style)': {
-            m: 1,
-            width: 69,
-            height: 127,
-          },
+          justifyContent: 'center', // Center align cards horizontally
         }}
       >
         {categories.map((category, idx) => {
-          return <Card key={idx} sx={{ minWidth: 275 }} >
+          return <Card key={idx} sx={{ minWidth: 275, margin: 1 }}> {/* Added margin */}
             <CardContent>
               <Typography variant="h5" component="div">
                 {category.name}
               </Typography>
               <Typography variant="body2">
-                Puts you '{category.description}'
+                {category.description}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button onClick={() => handleClick(category)}>PRESS IT</Button>
+              <Button onClick={() => handleClick(category)}>Select</Button>
             </CardActions>
           </Card>
         })}
