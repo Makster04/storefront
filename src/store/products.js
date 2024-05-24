@@ -18,82 +18,82 @@ const initialState = {
   products: [
     createProduct(
       "Nike",
-      "Nike LeBron 21 Akoya",
-      "The top sportswear brand on the planet by a longshot, it only makes sense that the cream of the crop in the NBA would want to rock The Swoosh on the court while getting paid to do so.",
-      "https://cdn.sanity.io/images/d6wcctii/production/c945dbe965fe0208503e85e632202772e06b1f91-1070x760.png?w=768&q=75&fit=clip&auto=format",
+      "Penny Hardaway",
+      "Nike Penny Air 2",
+      "https://images.solecollector.com/complex/image/upload/f_auto,fl_lossy,q_auto,w_1200/blob_fw2qog.png",
       130.0,
       20,
     ),
     createProduct(
       "Nike",
-      "Nike KD 16 Aunt Pearl",
-      "Kevin Durant has made waves throughout his Nike KD line, now onto the Nike KD 16. He often brings forth colorways that tie into his personal life, like his love for music or raising awareness for breast cancer with his yearly tribute to his Aunt Pearl.",
-      "https://cdn.sanity.io/images/d6wcctii/production/9fbb4a69c17385b5905abd3243341e59ed2fa76e-1070x760.png?w=768&q=75&fit=clip&auto=format",
+      "Kobe Bryant",
+      "Black Mamba 2",
+      "https://th.bing.com/th/id/OIP.rRt49DZKDzuxqsQVkl9QJwHaHa?rs=1&pid=ImgDetMain",
       125.0,
       15,
     ),
     createProduct(
       "Nike",
-      "Nike Ja 1 Day One",
-      "As for the next generation of Nike Basketball athletes, we reported earlier in the year that Ja Morant would be the next athlete on The Swoosh’s roster to receive his own signature silhouette, aptly dubbed the Nike Ja 1.",
-      "https://cdn.sanity.io/images/d6wcctii/production/0db38693b8bdb41a765ba6037781e27eebd5f998-1070x760.png?w=768&q=75&fit=clip&auto=format",
+      "Scottie Pippen (SF)",
+      "Air Pippen 1",
+      "https://image.goat.com/750/attachments/product_template_pictures/images/036/103/932/original/51699_00.png.png",
       135.0,
       25,
     ),
     createProduct(
       "Nike",
-      "Nike PG 6 Paisley",
-      "An aging star in the NBA, Paul George has been with Nike since 2016 and has released six different silhouettes since then with the latest being the Nike PG 6.",
-      "https://cdn.sanity.io/images/d6wcctii/production/415d23a30b36056552843e6c2805fe27135b2b44-1070x760.png?w=768&q=75&fit=clip&auto=format",
+      "Giannas Antetokoumpo (PF)",
+      "Giannas Immortality 2.",
+      "https://th.bing.com/th/id/OIP.d4-gnI5N6uj_mjaHLr1AMQHaHa?rs=1&pid=ImgDetMain",
       135.0,
       30,
     ),
     createProduct(
       "Nike",
-      "Nike Zoom Freak 5 Milk 'N Oreos",
-      "Nicknamed The Greek Freak, Giannis Antetokounmpo has become one of the leagues biggest stars thanks to his explosive play and large build.",
-      "https://cdn.sanity.io/images/d6wcctii/production/5fb685b2598a7900aa073e054567ce8022241b22-1070x760.png?w=768&q=75&fit=clip&auto=format",
+      "Karl Anthony Towns",
+      "Nike Hyperdunk",
+      "https://i5.walmartimages.com/asr/bb7afacd-0a38-442c-9a0a-85d52b418ddb_1.c2ffcd77384f0af74fc19f12a0b8d6c2.jpeg",
       135.0,
       18,
     ),
   
     createProduct(
       "Adidas",
-      "Adidas Dame 8",
-      "The Bucks' point guard, Damian Lillard, has not only made waves with his on-court prowess but also with his adidas signature sneakers.",
-      "https://cdn.sanity.io/images/d6wcctii/production/d389f44639463983cec0cda39dcc51d3f2f60bc6-1070x760.png?q=75&fit=clip&auto=format",
+      "Damian Lillard (PG)",
+      "Dame 8",
+      "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/289d19cdeaa24ebeba4eadfa001fb497_9366/Dame_8_Shoes_Black_GZ4626_01_standard.jpg",
       125.0,
       20,
     ),
     createProduct(
       "Adidas",
-      "Adidas Harden Volume 7",
-      "The adidas Harden Vol. 7 is the pinnacle of the series with its advanced construction including Lightstrike and Jet Boost cushioning.",
-      "https://cdn.sanity.io/images/d6wcctii/production/ffe499440542bc971628f08d96c49ec36fe1e3bd-1070x760.png?q=75&fit=clip&auto=format",
+      "Donovan Mitchell (SG)",
+      "D.O.N. Issue #3",
+      "https://assets.adidas.com/images/w_600,f_auto,q_auto/e3f2672ab6ef4ff5891bae4a004a4279_9366/Tenis_D.O.N._Issue_3_Rojo_GY0322_01_standard.jpg",
       125.0,
       15,
     ),
     createProduct(
       "Adidas",
-      "Adidas D.O.N. Issue #4",
-      "Donovan Mitchell of the Cleveland Cavaliers has showcased his unique style and dedication through his signature line with adidas.",
-      "https://cdn.sanity.io/images/d6wcctii/production/669d218582ce7b7e9c10ebae7309081ba0863069-1070x760.png?q=75&fit=clip&auto=format",
+      "Brandon Ingram (SF)",
+      "ZoneBoost.",
+      "https://th.bing.com/th/id/R.4e269c2079bef7373e31b3dfb63ad842?rik=Qm2jzEKQ53gGvQ&pid=ImgRaw&r=0",
       130.0,
       25,
     ),
     createProduct(
       "Adidas",
-      "Adidas Trae Young 1",
-      "The Atlanta Hawks' sharpshooter, Trae Young, is another fantastic talent who has partnered with adidas.",
-      "https://cdn.sanity.io/images/d6wcctii/production/4462908f5fb89808769e3e307e1bb8916d1da3ba-1070x760.png?q=75&fit=clip&auto=format",
+      "Tim Duncan",
+      "Total Air Foamposite Max",
+      "https://www.sneakerfiles.com/wp-content/uploads/2012/09/Nike-Total-Air-Foamposite-Max-Current-Blue-New-Images-1.jpg",
       130.0,
       30,
     ),
     createProduct(
       "Adidas",
-      "Adidas AE 1",
-      "The Timberwolves' superstar, Anthony Edwards, is the new comer of the Adidas franchise and needs you,.",
-      "https://cdn.sanity.io/images/d6wcctii/production/49cccf47ce478a7cb8681521a2783db6fc6ae26c-620x380.png?w=768&q=75&fit=clip&auto=format",
+      "Dikembe Mutombo",
+      "MUTOMBO",
+      "https://sothebys-md.brightspotcdn.com/dims4/default/cb99dbc/2147483647/strip/true/crop/5000x5000+0+0/resize/800x800!/quality/90/?url=http:%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fmedia-desk%2F0c%2Fd3%2Fc3db70424b33984d08cc292535cc%2Fmarketplace-ftwr-4566.jpg",
       130.0,
       18,
     ),
@@ -115,13 +115,16 @@ export const productReducer = (state = initialState, action) => {
           }
         }),
       };
-
+      //changes here check demo code for changes
+    case 'ADD_TO_CART':
+      console.log('DECREMENT PRODUCT COUNT', action.payload)
+      return state;
     default:
       return state;
   }
 };
 
-export const productFilter = (category) => {
+export const productsFilter = (category) => {
   return {
     type: "FILTER",
     payload: category,
